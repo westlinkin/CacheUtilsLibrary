@@ -6,6 +6,21 @@ A simple util library to write and read cache files in Android. This whole libra
 
 
 ##Configuration
+You need to configurate `CacheUtilsLibrary` in your `Application` class.
+
+```
+public class MyApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // configure CacheUtilsLibrary
+        CacheUtils.configureCache(this);
+    }
+}
+```
+
+Don't forget to declare the `MyApplication` class in your `AndroidManifest.xml` file.
 
 
 ##Usage
