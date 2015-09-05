@@ -28,32 +28,33 @@
             android:id="@+id/string"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="String"/>
+            android:checked="true"
+            android:text="@string/rb_string"/>
 
         <RadioButton
             android:id="@+id/map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Map<String, T>"/>
+            android:text="@string/rb_map"/>
 
         <RadioButton
             android:id="@+id/listmap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="List<Map<String, T>>"/>
+            android:text="@string/rb_listmap"/>
 
 
         <RadioButton
             android:id="@+id/object"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MyClass"/>
+            android:text="@string/rb_object"/>
 
         <RadioButton
             android:id="@+id/listobject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="List<MyObject>"/>
+            android:text="@string/rb_listobject"/>
 
     </RadioGroup>
 

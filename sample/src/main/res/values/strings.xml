@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="rb_string">String</string>
+    <string name="rb_map"><![CDATA[Map<String, T>]]></string>
+    <string name="rb_listmap"><![CDATA[List<Map<String, T>>]]></string>
+    <string name="rb_object">MyClass</string>
+    <string name="rb_listobject"><![CDATA[List<MyObject>]]></string>
 </resources>
