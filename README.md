@@ -8,7 +8,7 @@ A simple util library to write and read cache files in Android. This whole libra
 ##Configuration
 You need to configurate `CacheUtilsLibrary` in your `Application` class.
 
-```
+```Java
 public class MyApplication extends Application {
 
     @Override
