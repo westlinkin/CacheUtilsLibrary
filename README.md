@@ -1,6 +1,6 @@
 # CacheUtilsLibrary
 
-A simple util library to write and read cache files in Android. This whole library is just a simple Java class, I used it in many other projects. I found it very useful, so here it is.
+A simple util library to write and read cache files in Android. This whole library is just a simple [Java class](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/library/src/main/java/com/lifeofcoding/cacheutlislibrary/CacheUtils.java), I used it in many other projects. I found it very useful, so here it is.
 
 ##Gradle
 
