@@ -25,7 +25,7 @@ Don't forget to declare the `MyApplication` class in your `AndroidManifest.xml` 
 
 ##Usage
 All sample code can be found in the [MainActivity](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MainActivity.java) file. 
-###Cache `String` File
+####Cache `String` File
 ```Java
 // write
 CacheUtils.writeFile(CACHE_FILE_STRING, CACHE_FILE_CONTENT_STRING);
@@ -34,7 +34,7 @@ CacheUtils.writeFile(CACHE_FILE_STRING, CACHE_FILE_CONTENT_STRING);
 String fileContent = CacheUtils.readFile(CACHE_FILE_STRING);
 ```
 
-###Cache `Map<String, T>` File
+####Cache `Map<String, T>` File
 ```Java
 // write
 CacheUtils.writeDataMapFile(CACHE_FILE_MAP, getCacheFileContentMap());
@@ -52,7 +52,7 @@ private static Map<String, Object> getCacheFileContentMap() {
 }
 ```
 
-###Cache `List<Map<String, T>` File
+####Cache `List<Map<String, T>` File
 ```Java
 // write
 CacheUtils.writeDataMapsFile(CACHE_FILE_LIST_MAP, getCacheFileContentListMap());
@@ -74,7 +74,7 @@ private static List<Map<String, Object>> getCacheFileContentListMap() {
     return listMapData;
 }
 ```
-###Cache `Object` File
+####Cache `Object` File
 ```Java
 // write
 CacheUtils.writeObjectFile(CACHE_FILE_OBJECT, MyClass.SAMPLE_MYCLASS_1);
@@ -84,7 +84,7 @@ MyClass myClassSample = CacheUtils.readObjectFile(CACHE_FILE_OBJECT, new TypeTok
 ```
 You can see `MyClass` and `MyClass.SAMPLE_MYCLASS_1` [here](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MyClass.java) and [here](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MyClass.java#L46).
 
-###Cache `List<Object>` File
+####Cache `List<Object>` File
 ```Java
 // write
 CacheUtils.writeObjectFile(CACHE_FILE_LIST_OBJECT, getCacheFileContentListObject());
