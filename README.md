@@ -24,7 +24,84 @@ Don't forget to declare the `MyApplication` class in your `AndroidManifest.xml` 
 
 
 ##Usage
+All sample code can be found in the [MainActivity](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MainActivity.java) file. 
+###Cache `String` File
+```Java
+// write
+CacheUtils.writeFile(CACHE_FILE_STRING, CACHE_FILE_CONTENT_STRING);
 
+// read
+String fileContent = CacheUtils.readFile(CACHE_FILE_STRING);
+```
+
+###Cache `Map<String, T>` File
+```Java
+// write
+CacheUtils.writeDataMapFile(CACHE_FILE_MAP, getCacheFileContentMap());
+
+// read
+Map<String, Object> mapData = CacheUtils.readDataMapFile(CACHE_FILE_MAP);
+
+// get mapData
+private static Map<String, Object> getCacheFileContentMap() {
+    Map<String, Object> mapData = new HashMap<>();
+    mapData.put("firstItem", "item0");
+    mapData.put("secondItem", 1);
+    mapData.put("thirdItem", false);
+    return mapData;
+}
+```
+
+###Cache `List<Map<String, T>` File
+```Java
+// write
+CacheUtils.writeDataMapsFile(CACHE_FILE_LIST_MAP, getCacheFileContentListMap());
+
+// read
+List<Map<String, Object>> listMapData = CacheUtils.readDataMapsFile(CACHE_FILE_LIST_MAP);
+
+// get listMapData
+private static List<Map<String, Object>> getCacheFileContentListMap() {
+    List<Map<String, Object>> listMapData = new ArrayList<Map<String, Object>>();
+
+    for (int i = 0; i < 4; i++) {
+        Map<String, Object> item = new HashMap<>();
+        item.put("firstItemAt" + i, "item0At" + i);
+        item.put("secondItemAt" + i, 1 + i);
+        item.put("thirdItemAt" + i, i % 2 == 0);
+        listMapData.add(item);
+    }
+    return listMapData;
+}
+```
+###Cache `Object` File
+```Java
+// write
+CacheUtils.writeObjectFile(CACHE_FILE_OBJECT, MyClass.SAMPLE_MYCLASS_1);
+
+// read
+MyClass myClassSample = CacheUtils.readObjectFile(CACHE_FILE_OBJECT, new TypeToken<MyClass>(){}.getType());
+```
+You can see `MyClass` and `MyClass.SAMPLE_MYCLASS_1` [here](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MyClass.java) and [here](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MyClass.java#L46).
+
+###Cache `List<Object>` File
+```Java
+// write
+CacheUtils.writeObjectFile(CACHE_FILE_LIST_OBJECT, getCacheFileContentListObject());
+
+// read
+List<MyClass> myClassList = CacheUtils.readObjectFile(CACHE_FILE_LIST_OBJECT, new TypeToken<List<MyClass>>(){}.getType());
+
+// get List<MyClass> data
+private static List<MyClass> getCacheFileContentListObject() {
+    List<MyClass> listObject = new ArrayList<>();
+    listObject.add(MyClass.SAMPLE_MYCLASS_1);
+    listObject.add(MyClass.SAMPLE_MYCLASS_2);
+    listObject.add(MyClass.SAMPLE_MYCLASS_3);
+    return listObject;
+}
+
+```
 
 ##License
 
