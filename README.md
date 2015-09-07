@@ -1,6 +1,6 @@
 # CacheUtilsLibrary
 
-This is a simple Android util library to write any type of data into cache files and then read them later. This whole library is just a simple [Java class](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/library/src/main/java/com/lifeofcoding/cacheutlislibrary/CacheUtils.java), I used it in my many other projects. I found it very useful, so here it is.
+This is a simple Android util library to write any type of data into cache files and then read them later, using `Gson` to serialize and deserialize these data.
 
 ##Gradle
 

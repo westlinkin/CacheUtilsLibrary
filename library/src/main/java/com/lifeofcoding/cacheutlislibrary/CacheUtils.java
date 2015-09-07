@@ -3,11 +3,7 @@ package com.lifeofcoding.cacheutlislibrary;
 import android.content.Context;
 import android.util.Log;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonToken;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -19,7 +15,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,46 +43,13 @@ public class CacheUtils {
         return BASE_CACHE_PATH + File.separator + name + FILE_SUFFIX;
     }
 
-    private static Gson buildGson() {
-        GsonBuilder b = new GsonBuilder();
-        b.registerTypeAdapter(Date.class, new TypeAdapter<Date>() {
-
-            @Override
-            public void write(com.google.gson.stream.JsonWriter writer, Date value) throws IOException {
-                if (value == null) {
-                    writer.nullValue();
-                    return;
-                }
-
-                long num = value.getTime();
-                num /= 1000;
-                writer.value(num);
-            }
-
-            @Override
-            public Date read(com.google.gson.stream.JsonReader reader) throws IOException {
-                if (reader.peek() == JsonToken.NULL) {
-                    reader.nextNull();
-                    return null;
-                }
-
-                long value = reader.nextLong();
-                return new Date(value * 1000);
-            }
-
-        });
-
-
-        return b.create();
-    }
-
     private static <T> List<Map<String, T>> dataMapsFromJson(String dataString) {
         if (StringUtils.isEmpty(dataString))
             return new ArrayList<Map<String, T>>();
 
         try {
             Type listType = new TypeToken<List<Map<String, T>>>(){}.getType();
-            return buildGson().fromJson(dataString, listType);
+            return GsonHelper.buildGson().fromJson(dataString, listType);
         } catch (Exception e) {
             if (BuildConfig.DEBUG)
                 Log.d(TAG, "failed to read json" + e.toString());
@@ -97,7 +59,7 @@ public class CacheUtils {
 
     private static <T> String dataMapstoJson(List<Map<String, T>> dataMaps) {
         try {
-            return buildGson().toJson(dataMaps);
+            return GsonHelper.buildGson().toJson(dataMaps);
         } catch (Exception e) {
             if (BuildConfig.DEBUG)
                 Log.d(TAG, "failed to write json" + e.toString());
@@ -150,7 +112,7 @@ public class CacheUtils {
 
     private static <T> T objectFromJson(String dataString, Type t) {
         try {
-            return buildGson().fromJson(dataString, t);
+            return GsonHelper.buildGson().fromJson(dataString, t);
         } catch (Exception e) {
             if (BuildConfig.DEBUG)
                 Log.v(TAG, "failed to read json" + e.toString());
@@ -160,7 +122,7 @@ public class CacheUtils {
 
     private static <T> String objectToJson(T o) {
         try {
-            return buildGson().toJson(o);
+            return GsonHelper.buildGson().toJson(o);
         } catch (Exception e) {
             if (BuildConfig.DEBUG)
                 Log.v(TAG, "failed to write json" + e.toString());
@@ -192,7 +154,7 @@ public class CacheUtils {
 
         try {
             Type t =  new TypeToken<Map<String, T>>(){}.getType();
-            return buildGson().fromJson(dataString, t);
+            return GsonHelper.buildGson().fromJson(dataString, t);
         } catch (Exception e) {
             if (BuildConfig.DEBUG)
                 Log.v(TAG, "failed to read json" + e.toString());
@@ -202,7 +164,7 @@ public class CacheUtils {
 
     private static <T> String dataMaptoJson(Map<String, T> dataMap) {
         try {
-            return buildGson().toJson(dataMap);
+            return GsonHelper.buildGson().toJson(dataMap);
         } catch (Exception e) {
             if (BuildConfig.DEBUG)
                 Log.v(TAG, "failed to write json" + e.toString());
