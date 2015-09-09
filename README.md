@@ -9,12 +9,12 @@ compile 'com.lifeofcoding:cacheutilslibrary:1.0.0@aar'
 
 If you have errors like:
 
-```Log
+```
 duplication file during packaging of APK ...
 Path in archive: META-INF/LICENSE.txt
 ...
 ```
-Please add suck code in your `android` entry of your `build.gradle` file:
+Please add such code in your `android` entry of your `build.gradle` file:
 
 ```Groovy
 packagingOptions {
