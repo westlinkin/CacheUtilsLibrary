@@ -29,7 +29,7 @@ packagingOptions {
 ```
 
 ##Configuration
-You need to configurate `CacheUtilsLibrary` in your `Application` class.
+You need to configure `CacheUtilsLibrary` in your `Application` class.
 
 ```Java
 public class MyApplication extends Application {
