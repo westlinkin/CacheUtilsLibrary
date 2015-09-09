@@ -3,7 +3,30 @@
 This is a simple Android util library to write any type of data into cache files and then read them later, using `Gson` to serialize and deserialize these data.
 
 ##Gradle
+```Groovy
+compile 'com.lifeofcoding:cacheutilslibrary:1.0.0@aar'
+```
 
+If you have errors like:
+
+```Log
+duplication file during packaging of APK ...
+Path in archive: META-INF/LICENSE.txt
+...
+```
+Please add suck code in your `android` entry of your `build.gradle` file:
+
+```Groovy
+packagingOptions {
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/NOTICE.txt'
+    exclude 'META-INF/ASL2.0'
+    exclude 'META-INF/MANIFEST.MF'
+}
+```
 
 ##Configuration
 You need to configurate `CacheUtilsLibrary` in your `Application` class.
