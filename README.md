@@ -1,5 +1,7 @@
 # CacheUtilsLibrary
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CacheUtilsLibrary-green.svg?style=flat)](https://android-arsenal.com/details/1/2478)
+
 This is a simple Android utils library to write any type of data into cache files and then read them later, using `Gson` to serialize and deserialize these data.
 
 ##Gradle
