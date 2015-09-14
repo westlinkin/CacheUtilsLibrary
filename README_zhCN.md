@@ -1,25 +1,23 @@
-# CacheUtilsLibrary
+# CacheUtilsLibrary 中文版
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CacheUtilsLibrary-green.svg?style=flat)](https://android-arsenal.com/details/1/2478)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.lifeofcoding/cacheutilslibrary/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.lifeofcoding/cacheutilslibrary)
 
-This is a simple Android utils library to write any type of data into cache files and then read them later, using `Gson` to serialize and deserialize these data.
-
-中文版请看[这里](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/README_zhCN.md)。
+这是一个将任何Java Object类型的数据序列化后写入缓存文件，将来使用时读取缓存文件并反序列化成对应Java Object的库。  
 
 ##Gradle
 ```Groovy
 compile 'com.lifeofcoding:cacheutilslibrary:1.0.0@aar'
 ```
 
-If you have errors like:
+如果编辑时有下面的错误：
 
 ```
 duplication file during packaging of APK ...
 Path in archive: META-INF/LICENSE.txt
 ...
 ```
-Please add such code in your `android` entry of your `build.gradle` file:
+请在 `build.gradle` 文件的 `android` 节点添加如下代码：
 
 ```Groovy
 packagingOptions {
@@ -33,8 +31,8 @@ packagingOptions {
 }
 ```
 
-##Configuration
-You need to configure `CacheUtilsLibrary` in your `Application` class.
+##配置
+你需要在项目的 `Application` 类中配置一下 `CacheUtilsLibrary` 库。
 
 ```Java
 public class MyApplication extends Application {
@@ -47,13 +45,13 @@ public class MyApplication extends Application {
     }
 }
 ```
+别忘了在 `AndroidManifest.xml` 文件中申明这个 `MyApplication` 类。
 
-Don't forget to declare the `MyApplication` class in your `AndroidManifest.xml` file.
 
+##使用
+所有样例代码都能在 [MainActivity](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MainActivity.java) 类中找到。
 
-##Usage
-All sample code can be found in the [MainActivity](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MainActivity.java) file. 
-#####Cache `String` File
+#####缓存文件内容为 `String` 
 ```Java
 // write
 CacheUtils.writeFile(CACHE_FILE_STRING, CACHE_FILE_CONTENT_STRING);
@@ -62,7 +60,7 @@ CacheUtils.writeFile(CACHE_FILE_STRING, CACHE_FILE_CONTENT_STRING);
 String fileContent = CacheUtils.readFile(CACHE_FILE_STRING);
 ```
 
-#####Cache `Map<String, T>` File
+#####缓存文件内容为 `Map<String, T>` 
 ```Java
 // write
 CacheUtils.writeDataMapFile(CACHE_FILE_MAP, getCacheFileContentMap());
@@ -80,7 +78,7 @@ private static Map<String, Object> getCacheFileContentMap() {
 }
 ```
 
-#####Cache `List<Map<String, T>` File
+#####缓存文件内容为 `List<Map<String, T>`
 ```Java
 // write
 CacheUtils.writeDataMapsFile(CACHE_FILE_LIST_MAP, getCacheFileContentListMap());
@@ -102,7 +100,7 @@ private static List<Map<String, Object>> getCacheFileContentListMap() {
     return listMapData;
 }
 ```
-#####Cache `Object` File
+#####缓存文件内容为 `Object`
 ```Java
 // write
 CacheUtils.writeObjectFile(CACHE_FILE_OBJECT, MyClass.SAMPLE_MYCLASS_1);
@@ -110,9 +108,9 @@ CacheUtils.writeObjectFile(CACHE_FILE_OBJECT, MyClass.SAMPLE_MYCLASS_1);
 // read
 MyClass myClassSample = CacheUtils.readObjectFile(CACHE_FILE_OBJECT, new TypeToken<MyClass>(){}.getType());
 ```
-You can see `MyClass` and `MyClass.SAMPLE_MYCLASS_1` [here](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MyClass.java) and [here](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MyClass.java#L46).
+你能在[这里](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MyClass.java) and [这里](https://github.com/westlinkin/CacheUtilsLibrary/blob/master/sample/src/main/java/com/lifeofcoding/cacheutilslibrary_sample/MyClass.java#L46)分别找到`MyClass` 和 `MyClass.SAMPLE_MYCLASS_1` 。
 
-#####Cache `List<Object>` File
+#####缓存文件内容为 `List<Object>`
 ```Java
 // write
 CacheUtils.writeObjectFile(CACHE_FILE_LIST_OBJECT, getCacheFileContentListObject());
@@ -131,7 +129,7 @@ private static List<MyClass> getCacheFileContentListObject() {
 
 ```
 
-##License
+##开源协议
 
 	Copyright 2015 Wesley Lin
 
