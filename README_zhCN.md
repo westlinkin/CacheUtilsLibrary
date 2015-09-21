@@ -2,6 +2,7 @@
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CacheUtilsLibrary-green.svg?style=flat)](https://android-arsenal.com/details/1/2478)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.lifeofcoding/cacheutilslibrary/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.lifeofcoding/cacheutilslibrary)
+[![Android Gems](http://www.android-gems.com/badge/westlinkin/CacheUtilsLibrary.svg?branch=master)](http://www.android-gems.com/lib/westlinkin/CacheUtilsLibrary)
 
 这是一个将任何Java Object类型的数据序列化后写入缓存文件，将来使用时读取缓存文件并反序列化成对应Java Object的库。  
 
