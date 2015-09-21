@@ -1,3 +1,5 @@
+[![Android Gems](http://www.android-gems.com/badge/westlinkin/CacheUtilsLibrary.svg?branch=master)](http://www.android-gems.com/lib/westlinkin/CacheUtilsLibrary)
+
 # CacheUtilsLibrary
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CacheUtilsLibrary-green.svg?style=flat)](https://android-arsenal.com/details/1/2478)
