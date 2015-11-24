@@ -23,7 +23,8 @@
 <a id="cacheutilslibrary" class="anchor" href="#cacheutilslibrary" aria-hidden="true"><span class="octicon octicon-link"></span></a>CacheUtilsLibrary</h1>
 
 <p><a href="https://android-arsenal.com/details/1/2478"><img src="https://img.shields.io/badge/Android%20Arsenal-CacheUtilsLibrary-green.svg?style=flat" alt="Android Arsenal"></a>
-<a href="https://maven-badges.herokuapp.com/maven-central/com.lifeofcoding/cacheutilslibrary"><img src="https://maven-badges.herokuapp.com/maven-central/com.lifeofcoding/cacheutilslibrary/badge.svg" alt="Maven Central"></a></p>
+<a href="https://maven-badges.herokuapp.com/maven-central/com.lifeofcoding/cacheutilslibrary"><img src="https://maven-badges.herokuapp.com/maven-central/com.lifeofcoding/cacheutilslibrary/badge.svg" alt="Maven Central"></a>
+<a href="http://www.android-gems.com/lib/westlinkin/CacheUtilsLibrary"><img src="http://www.android-gems.com/badge/westlinkin/CacheUtilsLibrary.svg?branch=master" alt="Android Gems"></a></p>
 
 <p>This is a simple Android utils library to write any type of data into cache files and then read them later, using <code>Gson</code> to serialize and deserialize these data.</p>
 
@@ -32,7 +33,10 @@
 <h2>
 <a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gradle</h2>
 
-<div class="highlight highlight-Groovy"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.lifeofcoding:cacheutilslibrary:1.0.0@aar<span class="pl-pds">'</span></span></pre></div>
+<div class="highlight highlight-source-groovy"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.lifeofcoding:cacheutilslibrary:1.0.0@aar<span class="pl-pds">'</span></span>
+compile <span class="pl-s"><span class="pl-pds">'</span>com.google.code.gson:gson:2.2.2<span class="pl-pds">'</span></span>
+compile <span class="pl-s"><span class="pl-pds">'</span>org.apache.commons:commons-lang3:3.1<span class="pl-pds">'</span></span>
+compile <span class="pl-s"><span class="pl-pds">'</span>commons-io:commons-io:2.4<span class="pl-pds">'</span></span></pre></div>
 
 <p>If you have errors like:</p>
 
@@ -43,7 +47,7 @@ Path in archive: META-INF/LICENSE.txt
 
 <p>Please add such code in your <code>android</code> entry of your <code>build.gradle</code> file:</p>
 
-<div class="highlight highlight-Groovy"><pre>packagingOptions {
+<div class="highlight highlight-source-groovy"><pre>packagingOptions {
     exclude <span class="pl-s"><span class="pl-pds">'</span>META-INF/DEPENDENCIES<span class="pl-pds">'</span></span>
     exclude <span class="pl-s"><span class="pl-pds">'</span>META-INF/NOTICE<span class="pl-pds">'</span></span>
     exclude <span class="pl-s"><span class="pl-pds">'</span>META-INF/LICENSE<span class="pl-pds">'</span></span>
@@ -58,7 +62,7 @@ Path in archive: META-INF/LICENSE.txt
 
 <p>You need to configure <code>CacheUtilsLibrary</code> in your <code>Application</code> class.</p>
 
-<div class="highlight highlight-Java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MyApplication</span> <span class="pl-k">extends</span> <span class="pl-e">Application</span> {
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MyApplication</span> <span class="pl-k">extends</span> <span class="pl-e">Application</span> {
 
     <span class="pl-k">@Override</span>
     <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onCreate</span>() {
@@ -78,7 +82,7 @@ Path in archive: META-INF/LICENSE.txt
 <h5>
 <a id="cache-string-file" class="anchor" href="#cache-string-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cache <code>String</code> File</h5>
 
-<div class="highlight highlight-Java"><pre><span class="pl-c">// write</span>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// write</span>
 <span class="pl-smi">CacheUtils</span><span class="pl-k">.</span>writeFile(<span class="pl-c1">CACHE_FILE_STRING</span>, <span class="pl-c1">CACHE_FILE_CONTENT_STRING</span>);
 
 <span class="pl-c">// read</span>
@@ -87,7 +91,7 @@ Path in archive: META-INF/LICENSE.txt
 <h5>
 <a id="cache-mapstring-t-file" class="anchor" href="#cache-mapstring-t-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cache <code>Map&lt;String, T&gt;</code> File</h5>
 
-<div class="highlight highlight-Java"><pre><span class="pl-c">// write</span>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// write</span>
 <span class="pl-smi">CacheUtils</span><span class="pl-k">.</span>writeDataMapFile(<span class="pl-c1">CACHE_FILE_MAP</span>, getCacheFileContentMap());
 
 <span class="pl-c">// read</span>
@@ -105,7 +109,7 @@ Path in archive: META-INF/LICENSE.txt
 <h5>
 <a id="cache-listmapstring-t-file" class="anchor" href="#cache-listmapstring-t-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cache <code>List&lt;Map&lt;String, T&gt;</code> File</h5>
 
-<div class="highlight highlight-Java"><pre><span class="pl-c">// write</span>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// write</span>
 <span class="pl-smi">CacheUtils</span><span class="pl-k">.</span>writeDataMapsFile(<span class="pl-c1">CACHE_FILE_LIST_MAP</span>, getCacheFileContentListMap());
 
 <span class="pl-c">// read</span>
@@ -128,7 +132,7 @@ Path in archive: META-INF/LICENSE.txt
 <h5>
 <a id="cache-object-file" class="anchor" href="#cache-object-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cache <code>Object</code> File</h5>
 
-<div class="highlight highlight-Java"><pre><span class="pl-c">// write</span>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// write</span>
 <span class="pl-smi">CacheUtils</span><span class="pl-k">.</span>writeObjectFile(<span class="pl-c1">CACHE_FILE_OBJECT</span>, <span class="pl-smi">MyClass</span><span class="pl-c1"><span class="pl-k">.</span>SAMPLE_MYCLASS_1</span>);
 
 <span class="pl-c">// read</span>
@@ -139,7 +143,7 @@ Path in archive: META-INF/LICENSE.txt
 <h5>
 <a id="cache-listobject-file" class="anchor" href="#cache-listobject-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cache <code>List&lt;Object&gt;</code> File</h5>
 
-<div class="highlight highlight-Java"><pre><span class="pl-c">// write</span>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// write</span>
 <span class="pl-smi">CacheUtils</span><span class="pl-k">.</span>writeObjectFile(<span class="pl-c1">CACHE_FILE_LIST_OBJECT</span>, getCacheFileContentListObject());
 
 <span class="pl-c">// read</span>
