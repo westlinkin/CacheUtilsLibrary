@@ -43,7 +43,7 @@ public class MyClass {
         return "{text: " + text + ", id: " + id + ", isIdZero: " + isIdZero + "}";
     }
 
-    public static MyClass SAMPLE_MYCLASS_1 = new MyClass("MyClass Smaple1", 0);
-    public static MyClass SAMPLE_MYCLASS_2 = new MyClass("MyClass Smaple2", 1);
-    public static MyClass SAMPLE_MYCLASS_3 = new MyClass("MyClass Smaple3", 1);
+    public static MyClass SAMPLE_MYCLASS_1 = new MyClass("MyClass Sample1", 0);
+    public static MyClass SAMPLE_MYCLASS_2 = new MyClass("MyClass Sample2", 1);
+    public static MyClass SAMPLE_MYCLASS_3 = new MyClass("MyClass Sample3", 1);
 }
