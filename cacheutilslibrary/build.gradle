@@ -4,7 +4,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 
 // This is the library version used when deploying the artifact
-version = "1.0.0"
+version = "1.0.1"
 
 android {
     compileSdkVersion 23
@@ -14,7 +14,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.1"
     }
     buildTypes {
         release {
