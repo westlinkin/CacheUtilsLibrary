@@ -1,13 +1,13 @@
 package com.lifeofcoding.cacheutlislibrary;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.google.gson.reflect.TypeToken;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -44,7 +44,7 @@ public class CacheUtils {
     }
 
     private static <T> List<Map<String, T>> dataMapsFromJson(String dataString) {
-        if (StringUtils.isEmpty(dataString))
+        if (TextUtils.isEmpty(dataString))
             return new ArrayList<Map<String, T>>();
 
         try {
@@ -149,7 +149,7 @@ public class CacheUtils {
     }
 
     private static <T> Map<String, T> dataMapFromJson(String dataString) {
-        if (StringUtils.isEmpty(dataString))
+        if (TextUtils.isEmpty(dataString))
             return new HashMap<String,T>();
 
         try {

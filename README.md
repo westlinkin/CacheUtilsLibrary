@@ -14,7 +14,6 @@ This is a simple Android utils library to write any type of data into cache file
 ```Groovy
 compile 'com.lifeofcoding:cacheutilslibrary:1.0.1@aar'
 compile 'com.google.code.gson:gson:2.2.2'
-compile 'org.apache.commons:commons-lang3:3.1'
 compile 'commons-io:commons-io:2.4'
 ```
 
